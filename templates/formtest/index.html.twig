@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formtest index
+{% endblock %}
+
+{% block body %}
+	<h1>Formtest index</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Kilometers</th>
+				<th>Price</th>
+				<th>Creation</th>
+				<th>Email</th>
+				<th>Categories</th>
+				<th>Phone number</th>
+				<th>Good</th>
+				<th>Season</th>
+				<th>Color</th>
+				<th>Image</th>
+				<th>PDF</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for formtest in formtests %}
+				<tr>
+					<td>{{ formtest.id }}</td>
+					<td>{{ formtest.name }}</td>
+					<td>{{ formtest.kilometers }}</td>
+					<td>{{ formtest.price }}&euro;</td>
+					<td>{{ formtest.creation|date('Y-m-d H:i') }}</td>
+					<td>{{ formtest.email }}</td>
+					<td>{{ formtest.categories|join(', ') }}</td>
+					<td>{{ formtest.phonenumber }}</td>
+					<td>{{ formtest.good ? 'Yes' : 'No' }}</td>
+					<td>{{ formtest.season }}</td>
+					<td>{{ formtest.color }}</td>
+					<td>
+						<a href="{{ asset('uploads/images/' ~ formtest.image) }}">
+							<code>{{ formtest.image }}</code>
+						</a>
+					</td>
+					<td>
+						<a href="{{ asset('uploads/pdf/' ~ formtest.pdf) }}">
+							<code>{{ formtest.pdf }}</code>
+						</a>
+					</td>
+					<td>
+						<a href="{{ path('app_formtest_show', {'id': formtest.id}) }}">show</a>
+						<a href="{{ path('app_formtest_edit', {'id': formtest.id}) }}">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="3">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a href="{{ path('app_formtest_new') }}">Create new</a>
+{% endblock %}

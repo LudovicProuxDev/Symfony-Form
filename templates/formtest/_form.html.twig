@@ -1,0 +1,113 @@
+<div class="form-control">
+	{{ form_start(form) }}
+	<div class="col-md-4">
+		{{ form_label(form.name) }}
+		{{ form_widget(form.name) }}
+		<small>{{ form_help(form.name) }}</small>
+		<div class="error">
+			{{ form_errors(form.name) }}
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		{{ form_label(form.kilometers) }}
+		{{ form_widget(form.kilometers) }}
+		<small>{{ form_help(form.kilometers) }}</small>
+		<div class="error">
+			{{ form_errors(form.kilometers) }}
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		{{ form_label(form.price) }}
+		{{ form_widget(form.price) }}
+		<small>{{ form_help(form.price) }}</small>
+		<div class="error">
+			{{ form_errors(form.price) }}
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		{{ form_label(form.creation) }}
+		{{ form_widget(form.creation) }}
+		<small>{{ form_help(form.creation) }}</small>
+		<div class="error">
+			{{ form_errors(form.creation) }}
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		{{ form_label(form.email) }}
+		{{ form_widget(form.email) }}
+		<small>{{ form_help(form.email) }}</small>
+		<div class="error">
+			{{ form_errors(form.email) }}
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		{{ form_label(form.categories) }}
+		{{ form_widget(form.categories) }}
+		<small>{{ form_help(form.categories) }}</small>
+		<div class="error">
+			{{ form_errors(form.categories) }}
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		{{ form_label(form.phonenumber) }}
+		{{ form_widget(form.phonenumber) }}
+		<small>{{ form_help(form.phonenumber) }}</small>
+		<div class="error">
+			{{ form_errors(form.phonenumber) }}
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		{{ form_label(form.good) }}
+		{{ form_widget(form.good) }}
+		<small>{{ form_help(form.good) }}</small>
+		<div class="error">
+			{{ form_errors(form.good) }}
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		{{ form_label(form.season) }}
+		{{ form_widget(form.season) }}
+		<small>{{ form_help(form.season) }}</small>
+		<div class="error">
+			{{ form_errors(form.season) }}
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		{{ form_label(form.color) }}
+		{{ form_widget(form.color) }}
+		<small>{{ form_help(form.color) }}</small>
+		<div class="error">
+			{{ form_errors(form.color) }}
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		{{ form_label(form.image) }}
+		{{ form_widget(form.image) }}
+		<small>{{ form_help(form.image) }}</small>
+		<div class="error">
+			{{ form_errors(form.image) }}
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		{{ form_label(form.pdf) }}
+		{{ form_widget(form.pdf) }}
+		<small>{{ form_help(form.pdf) }}</small>
+		<div class="error">
+			{{ form_errors(form.pdf) }}
+		</div>
+	</div>
+
+	<button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+	{{ form_end(form) }}
+</div>

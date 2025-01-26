@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formtest{% endblock %}
+
+{% block body %}
+    <h1>Formtest</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ formtest.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ formtest.name }}</td>
+            </tr>
+            <tr>
+                <th>Kilometers</th>
+                <td>{{ formtest.kilometers }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ formtest.price }}</td>
+            </tr>
+            <tr>
+                <th>Km * Price</th>
+                <td>{{ formtest.kilometers * formtest.price }}</td>
+            </tr>
+            <tr>
+                <th>Creation</th>
+                <td>{{ formtest.creation|date('Y-m-d H:i') }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ formtest.email }}</td>
+            </tr>
+            <tr>
+                <th>Categories</th>
+                <td>{{ formtest.categories|join(', ') }}</td>
+            </tr>
+            <tr>
+                <th>Phone number</th>
+                <td>{{ formtest.phonenumber }}</td>
+            </tr>
+            <tr>
+                <th>Good</th>
+                <td>{{ formtest.good ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Season</th>
+                <td>{{ formtest.season }}</td>
+            </tr>
+            <tr>
+                <th>Color</th>
+                <td>{{ formtest.color }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td><img src="{{ asset('uploads/images/' ~ formtest.image) }}" /></td>
+            </tr>
+            <tr>
+                <th>PDF</th>
+                <td><iframe src="{{ asset('uploads/pdf/' ~ formtest.pdf) }}"></iframe></td>
+            </tr>
+
+
+
+
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_formtest_index') }}">back to list</a>
+
+    <a href="{{ path('app_formtest_edit', {'id': formtest.id}) }}">edit</a>
+
+    {{ include('formtest/_delete_form.html.twig') }}
+{% endblock %}
