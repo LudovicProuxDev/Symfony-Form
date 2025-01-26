@@ -78,7 +78,7 @@ class FormtestController extends AbstractController
             /** @var UploadedFile $image */
             $image = $form->get('image')->getData();
             if ($image) {
-                // Rename the file if exists
+                // Remove the file if exists
                 if ($filesystem->exists($fileUploader->getImagesDirectory() . '/' . $formtest->getImage())) {
                     $filesystem->remove($fileUploader->getImagesDirectory() . '/' . $formtest->getImage());
                 }
@@ -88,7 +88,7 @@ class FormtestController extends AbstractController
             /** @var UploadedFile $pdf */
             $pdf = $form->get('pdf')->getData();
             if ($pdf) {
-                // Rename the file if exists
+                // Remove the file if exists
                 if ($filesystem->exists($fileUploader->getPdfDirectory() . '/' . $formtest->getPdf())) {
                     $filesystem->remove($fileUploader->getPdfDirectory() . '/' . $formtest->getPdf());
                 }
